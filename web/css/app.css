@@ -1,0 +1,10 @@
+.menu {
+  padding-left: 0;
+}
+.menu > li {
+  display: inline-block;
+}
+.flash-notice {
+  background-color: #e0ffff;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}新規運勢{% endblock %}
+
+{% block body %}
+    <h1>新規運勢</h1>
+
+    {# ① フォームの表示 #}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="追加" />
+    {{ form_end(form) }}
+
+    <hr>
+    <a href="{{ path('unsei_index') }}">運勢一覧へ戻る</a>
+{% endblock %}

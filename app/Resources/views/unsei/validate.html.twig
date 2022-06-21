@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}運勢の検証{% endblock %}
+
+{% block body %}
+<h3>運勢の検証でエラーがありました</h3>
+<ul>
+{% for error in errors %}
+    <li>{{ error.message }}</li> {# ① #}
+{% endfor %}
+</ul>
+
+{{ dump(errors) }}
+    
+{% endblock %}

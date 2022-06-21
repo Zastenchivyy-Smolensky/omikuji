@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}運勢一覧{% endblock %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>運勢</th>
+            <th>操作</th>
+        </tr>
+        {% for unsei in unseis %}
+        <tr>
+            <td>{{ unsei.name }}</td>
+            <td>
+                {# ① #}
+                <a href="{{ path('unsei_edit', {'id': unsei.id}) }}">編集</a>
+                <form action="{{ path('unsei_delete', {'id': unsei.id}) }}" method="post" style="display:inline-block">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <input type="hidden" name="_token" value="{{ csrf_token('unsei') }}" />
+                    <input type="submit" value="削除" />
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    {# ② #}
+    <a href="{{ path('unsei_new') }}">新規追加</a>
+{% endblock %}
